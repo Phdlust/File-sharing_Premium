@@ -15,6 +15,11 @@ OWNER_USERNAME = os.environ.get('OWNER_USERNAME', 'PhDLust')
 SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "ULTROIDOFFICIAL_CHAT") # WITHOUR @
 CHANNEL = os.environ.get("CHANNEL", "ULTROID_OFFICIAL") # WITHOUR @
 
+#pic
+FORCE_PIC = os.environ.get("FORCE_PIC", "")
+START_PIC = os.environ.get("START_PIC", "")
+TOKEN_PIC = os.environ.get("TOKEN_PIC", "")
+
 #auto delete
 DELETE_AFTER = int(os.environ.get("DELETE_AFTER", 60)) #seconds
 NOTIFICATION_TIME = int(os.environ.get('NOTIFICATION_TIME', 60)) #seconds
