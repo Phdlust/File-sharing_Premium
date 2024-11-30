@@ -211,8 +211,9 @@ async def start_command(client: Client, message: Message):
                     [InlineKeyboardButton("✨ Premium", callback_data="upi_info")]
                 ]
             )
-            welcome_message = await message.reply_text(
-                text=START_MSG.format(
+            welcome_message = await message.reply_photo(
+                photo=START_PIC,
+                caption=START_MSG.format(
                     first=message.from_user.first_name,
                     last=message.from_user.last_name,
                     username=None if not message.from_user.username else '@' + message.from_user.username,
@@ -220,7 +221,7 @@ async def start_command(client: Client, message: Message):
                     id=message.from_user.id
                 ),
                 reply_markup=reply_markup,
-                disable_web_page_preview=True,
+                #disable_web_page_preview=True,
                 quote=True
             )
         else:
@@ -234,8 +235,9 @@ async def start_command(client: Client, message: Message):
                     [InlineKeyboardButton("How to use the bot", url=TUT_VID)],
                     [InlineKeyboardButton("✨ Premium", callback_data="upi_info")]
                 ]
-                verification_message = await message.reply(
-                    f"Your token has EXPIRED !! \nRefresh Your Token to continue.\n\nToken Timeout: {get_exp_time(VERIFY_EXPIRE)}",
+                verification_message = await message.reply_photo(
+                    photo=TOKEN_PIC,  # This can be a URL or a file path
+                    caption=f"Your token has EXPIRED !! \nRefresh Your Token to continue.\n\nToken Timeout: {get_exp_time(VERIFY_EXPIRE)}",
                     reply_markup=InlineKeyboardMarkup(buttons),
                     protect_content=PROTECT_CONTENT,
                     quote=True
@@ -278,8 +280,9 @@ async def not_joined(client: Client, message: Message):
     except IndexError:
         pass
 
-    await message.reply(
-        text = FORCE_MSG.format(
+    await message.reply_photo(
+        photo=FORCE_PIC,  # This can be a URL or a file path
+        caption=FORCE_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
