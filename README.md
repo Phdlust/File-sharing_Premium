@@ -27,6 +27,7 @@ File Sharing Token Bot is a Telegram bot designed to store posts and documents, 
 - 4 Force subs
 - Premuim Payment method
 - auto delete ( advanced )
+- set pic a start/token/force
 - set custom caption
 - easy to deploy
   
